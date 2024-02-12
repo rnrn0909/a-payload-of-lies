@@ -76,16 +76,18 @@ def publish(client):
         cts = str(current_ts) + 'Z'
         msg_dict = {
             'ts':cts, 
-            'stockItems': [{ 'workpiece': {'id': '01234567890abc', 'type': 'BLUE', 'state': 'RAW'}, 
-                           'location': 'A1'}, { 'workpiece': {'id': '00000000000000', 'type': 'BLUE', 'state': 'RAW'}, 
-                           'location': 'A2'}, { 'workpiece': {'id': '01234567890abc', 'type': 'BLUE', 'state': 'RAW'}, 
-                           'location': 'A3'}, { 'workpiece': {'id': 'abcdefghij', 'type': 'RED', 'state': 'RAW'}, 
-                           'location': 'B1'}, { 'workpiece': {'id': '01234567890abc', 'type': 'RED', 'state': 'RAW'}, 
-                           'location': 'B2'}, { 'workpiece': {'id': '01234567890abc', 'type': 'RED', 'state': 'RAW'}, 
-                           'location': 'B3'}, { 'workpiece': {'id': '01234567890abc', 'type': 'WHITE', 'state': 'RAW'}, 
-                           'location': 'C1'}, { 'workpiece': {'id': '01234567890abc', 'type': 'WHITE', 'state': 'RAW'}, 
-                           'location': 'C2'}, { 'workpiece': {'id': '01234567890abc', 'type': 'WHITE', 'state': 'RAW'}, 
-                           'location': 'C3'}] }
+            'stockItems': [
+                {'workpiece': {'id': '00000000000000', 'type': 'BLUE', 'state': 'RAW'}, 'location': 'A1'}, 
+                {'workpiece': {'id': 'abcdefghij', 'type': 'BLUE', 'state': 'RAW'}, 'location': 'A2'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'BLUE', 'state': 'RAW'}, 'location': 'A3'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'RED', 'state': 'RAW'}, 'location': 'B1'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'RED', 'state': 'RAW'}, 'location': 'B2'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'RED', 'state': 'RAW'}, 'location': 'B3'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'WHITE', 'state': 'RAW'}, 'location': 'C1'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'WHITE', 'state': 'RAW'}, 'location': 'C2'}, 
+                {'workpiece': {'id': '01234567890abc', 'type': 'WHITE', 'state': 'RAW'}, 'location': 'C3'}
+                ]
+            }
         msg = json.dumps(msg_dict)
         if not client.is_connected():
             logging.error(" P U B L I S H : MQTT client is not connected!")
@@ -115,7 +117,6 @@ def run():
         publish(client)
     else:
         client.loop_stop()
-
 
 
 if __name__=='__main__':

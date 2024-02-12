@@ -23,7 +23,6 @@ SUB_TOPIC = 'fl/#'
 PUB_TOPIC = 'fl/vgr/do'
 COLOR = ['RED', 'BLUE', 'WHITE']
 
-
 def connect_mqtt():
     def on_connect(client, userdata, flags, rc):
         if rc == 0:
@@ -78,9 +77,8 @@ def publish(client):
         cts = str(current_ts) + 'Z'
         color = random.choice(COLOR)
         msg_dict = {
-            'code': 7,      # 7 = VGR_MPO_PRODUCE
+            'code': 7,      # 3 = HBW_FETCHCONTAINER    7 = VGR_MPO_PRODUCE
             'ts': cts, 
-            
             'workpiece': {
                 "id" : "abcdefghij",
                 "state" : "RAW",
@@ -116,7 +114,6 @@ def run():
         publish(client)
     else:
         client.loop_stop()
-
 
 
 if __name__=='__main__':
