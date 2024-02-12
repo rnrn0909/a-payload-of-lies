@@ -12,4 +12,4 @@ python3 VGRTrigger.py
 ````
 
 
-#### Reference: [link](https://github.com/fischertechnik/txt_training_factory/blob/master/TxtSmartFacktoryLib/doc/MqttInterface.md)
+#### Reference: [link](https://github.com/fischertechnik/txt_training_factory/blob/master/TxtSmartFactoryLib/doc/MqttInterface.md)
