@@ -3,9 +3,12 @@ A Payload of Lies: False Data Injection Attacks on MQTT-based IIoT Systems
 
 ## Usage: 
 
+- First scenario
 ````
 python3 StockHBW.py
 ````
+
+- Second scenario
 
 ````
 python3 VGRTrigger.py
